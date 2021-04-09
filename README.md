@@ -153,3 +153,88 @@ Touch event:
 * With different platforms like ios and android, dialog is displayed differently at times. Dialogs are presented with a container to place the information, scrim to make the content a less focus point by covering it and express its inaccessibility, title as a brief and clear statement, supporting text and buttons. Dialog should only be scrollable when the title and buttons a pinned to their position.
 * It can be dismissed with a cancel button, keyboard escape key, tapping the scrim, android back button and voiceover. Dialog enters and exit the screen through fade transition pattern. Buttons can have a confirming action placed on the right side of the screen, dismissive action paced on the left side, acknowledgement action. Dialog should have a maximum of 2 actions.
 
+
+# SECOND HALF
+
+**Activity 0801**: 
+
+***Instagram***
+
+* Shared Preferences -Store preferred themes, notification of what the people you follow post
+* App-specific files - Store pictures and videos taken with Instagram camera.
+* Shared storage - Store screenshots of Instagram pictures to be shared with other social media app
+* Database - Store link visited, average time spent on the Instagram
+* Cloud - Store liked posts, picture, video, user profile and saved posts
+
+**Activity 0802**:
+* Shared Preferences - Store app settings like preferred theme, preferences, language choice, notification on what you going to do with your list
+* Cloud – store list to be accessible to other members of the app
+* Database - store list
+*Shared Storage - store accompished list/goals to be shared on other apps
+
+
+**Activity 0901**:
+
+Room persistence library provides an abstraction layer over SQLite and used to write simpler code to interact with a SQLite database. Three major components in Room are Database class, Entity, Data access objects. Database class is an abstract class that extends RoomDatabase and provides DAOs for accessing the SQLite database, annotated with @Database. Room.databaseBuilder() stores the SQLite database in the given filename. allowMainThreadQueries() method allows the Room database methods to be called on the main thread, which greatly simplifies the code. build() method creates and initializes the database.
+
+Data entities are tables in your app database, annotated with @Entity. Annotations for the entity’s field are @PrimaryKey, @NonNull, @ColumnInfo, @ForeignKey. Data access objects (DAO) is methods for selecting, inserting, updating, deleting data in the database, annotated with @Dao. Annotations for Dao are @Query, @Insert, @Update, @Delete.
+
+**Activity 0902**:
+
+Fragment is a modular section of an activity, which is a UI component that you can reuse. It has it’s own layout, lifecycle and input events. To create a fragment, add dependencies on the AndroidX Fragment library in your app’s build.grade file. 
+```
+dependencies {
+    def fragment_version = "1.3.2"
+
+    // Java language implementation
+    implementation "androidx.fragment:fragment:$fragment_version"
+    // Kotlin
+    implementation "androidx.fragment:fragment-ktx:$fragment_version"
+}
+```
+Extend the AndroidX Fragment class with your app’s logic inputed to the method.
+```
+class ExampleFragment extends Fragment {
+    public ExampleFragment() {
+        super(R.layout.example_fragment);
+    }
+}
+```
+add a fragment to your activity layout's XML, use a FragmentContainerView element
+```
+<!-- res/layout/example_activity.xml -->
+<androidx.fragment.app.FragmentContainerView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_container_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:name="com.example.ExampleFragment" />
+```
+
+**Activity 01002**:
+
+The notification needs to be well-written, appealing, of fewer words and add value to the user. How do I narrow the number of notification I push to audience without encouraging them to turn it off completely. 
+
+According to the survey, receiving between 2 and 5 messages in one week would cause 46% of respondents to disable push notifications. 32% of respondents said they would stop using the app altogether if they received between 6 and 10 messages in a week’s time. It is important to not bombard the user with push messages, so it is vital for an app to determine the threshold that best suits their users.
+
+I want the notification to have the right balance of being engaging, informative, timely, personal, actionable and retain more of my users. It should encourage the user to continue to use the app and remind them that they have it in their phone.
+
+
+**Activity 01003**:
+
+Notifications provide short, timely, and relevant information about your app when it’s not in use. It shouldn’t be used for cross promotion, unopened app, requesting to rate app, errors that the app can fix itself, worthless information. Android requires the user to be made aware of foreground services which are non dismissible but can be stopped. Notification has header area with app icon, app name, header text (optional), timestamp(optional), expand indictor. Its content area has content title, content text and large icon(optional). When expanded, the notification displays up to three action at the bottom. Notification is added to the notification drawer, indicated in the status bar as an icon, which may come with sound or vibrate and show a peek to grab the user attention. 
+
+The user can tap on the notification to move to the app, see an expanded view, dismiss it if permitted by swiping left or right, control notification by touching and holding a notification or swiping the notification and tapping the settings icon. Multiple notifications can be displayed in summary or group. More information is displayed through expanded view. A notification can provide up to 3 actions when expanded, but should not be what happens when you tap on the notification body.
+
+
+**Activity 01101**:
+Frame-by-frame animation | Tween animation | Property animation
+-------------------------|-----------------|--------------------
+ a series of images in quick succession is used to give the illusion of movement|a series of transformations (rotation, translation, scaling, etc.) is done on an object over time so the object appears to be rotating, moving, growing or shrinking, etc|a property of an object is changed over a fixed length of time using classes in the android.animation package
+
+
+**Activity 01103**:
+
+Motion can be used to educate, visual expression, entertain and bring attention to something. It shows how elements relate from hierarchy of parent and child element, position to relationship between similar items. It gives style and personality to a brand through customized transition. It can make a icon and illustrator playful, sophisticated, informative, emphasize on a point. It gives feedback on what the action of a user or system. It educates the user on what to do.
+
+
